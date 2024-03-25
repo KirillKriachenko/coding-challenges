@@ -1,0 +1,76 @@
+.body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 50px;
+}
+
+.centerDiv {
+    max-width: 500px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.titleContainer {
+    display: flex;
+    flex-direction: column;
+    font-size: 64px;
+    font-weight: bolder;
+    align-items: center;
+    justify-content: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: -2px;
+    padding: 0;
+    margin: 0;
+}
+
+.button {
+    all: unset;
+    background-color: #6496eb;
+    border-radius: 10px;
+    padding: 5px 15px;
+    min-width: 80px;
+    text-align: center;
+    color: aliceblue;
+    font-size: 18px;
+}
+
+.button:hover{
+    background-color: #527bc0;
+    cursor: pointer;
+}
+
+.modalContainer {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal{
+    background-color: aliceblue;
+    padding: 8vh 12vh;
+}
+
+.input{
+    all: unset;
+    border-radius: 10px;
+    border: #c9c9c9 1px solid;
+    padding: 2px 10px;
+    min-width: 35vh;
+}
+
+.closeButton{
+    all: unset;
+}
+
+.closeButton:hover{
+    color: rgb(155, 19, 19);
+    cursor: pointer;
+}
