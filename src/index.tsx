@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './pages/Layout';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import Tasks from './pages/Tasks';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -17,6 +18,7 @@ root.render(
       <Route index element={<Login />} />
       <Route path='/home' element={<Layout />}>
         <Route index element={<Home />} />
+        <Route path='tasks' element={<Tasks />} />
       </Route>
     </Routes>
   </BrowserRouter>
