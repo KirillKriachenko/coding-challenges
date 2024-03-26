@@ -1,8 +1,32 @@
 import React, { useState } from 'react'
 import styles from '../styles/loginstyles.module.css'
+import {useNavigate} from 'react-router-dom'
 
 function Login() {
     const [displayModal, setDisplayModal] = useState(false);
+    const [erroMessage, setErrorMessage] = useState('');
+
+    const navigation = useNavigate();
+
+    const loginButtonHandler = (event:React.SyntheticEvent) => {
+        event.preventDefault();
+
+        const target = event.target as typeof event.target & {
+            login: {value:string};
+            password: {value:string};
+        };
+
+        const login = target.login.value;
+        const password = target.password.value;
+        
+        if(login == 'kirill' && password == 'Kirill@123'){
+            navigation('/home');
+        }
+        else{
+            setErrorMessage('Please check login & password');
+        }
+
+    }
 
     return (
         <div className={styles.body}>
@@ -17,11 +41,14 @@ function Login() {
             {
                 displayModal && <div className={styles.modalContainer}>
                     <div className={styles.modal}>
-                        <form style={{display:'flex', flexDirection:'column'}}>
-                            <input className={styles.input}  placeholder='Login' />
-                            <input className={styles.input} style={{marginTop:20}} type='password' placeholder='Password' />
+                        <form onSubmit={loginButtonHandler} style={{display:'flex', flexDirection:'column'}}>
+                            <input name='login' className={styles.input}  placeholder='Login' />
+                            <input name='password' className={styles.input} style={{marginTop:20}} type='password' placeholder='Password' />
                             <button className={styles.button} style={{marginTop:20}} type='submit'>Enter</button>
                         </form>
+                        {
+                            erroMessage !== '' && <p style={{color: 'rgb(155, 19, 19)', textAlign:'center'}}>{erroMessage}</p>
+                        }
                     </div>
 
                     <button onClick={()=> setDisplayModal(false)} className={styles.closeButton} style={{position:'relative', right:'5vh', top:'-12vh'}}>X</button>
