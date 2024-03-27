@@ -1,0 +1,17 @@
+.pageButtons {
+    color: 'black';
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+}
+
+.pageButtons:hover {
+    background-color: #527bc0;
+    cursor: pointer;
+    color: aliceblue;
+}
+
+.active {
+    background-color: #527ac0b9;
+    cursor: pointer;
+    color: aliceblue;
+}

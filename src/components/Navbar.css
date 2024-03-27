@@ -1,0 +1,44 @@
+.navbar {
+    background-color: #527bc0;
+    color: aliceblue;
+    padding: 0rem 5vh;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    justify-content: space-between;
+}
+
+.navbar>ul {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.navbar ul > li{
+    padding-inline: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 3vh;
+    color: aliceblue;
+    font-weight: 500;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+nav .active {
+    background-color: #6496eb;
+}
+
+.navbar li:hover {
+    background-color: #6496eb;
+}
+
+@media screen and (max-width: 700px) {
+    .humburger{
+        display: block;
+        cursor: pointer;
+    }
+}

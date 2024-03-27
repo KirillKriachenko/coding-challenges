@@ -1,12 +1,9 @@
 import React, { useState } from 'react'
 import styles from '../styles/loginstyles.module.css'
-import {useNavigate} from 'react-router-dom'
 
 function Login() {
     const [displayModal, setDisplayModal] = useState(false);
     const [erroMessage, setErrorMessage] = useState('');
-
-    const navigation = useNavigate();
 
     const loginButtonHandler = (event:React.SyntheticEvent) => {
         event.preventDefault();
@@ -20,7 +17,8 @@ function Login() {
         const password = target.password.value;
         
         if(login == 'kirill' && password == 'Kirill@123'){
-            navigation('/home');
+            // navigation('/home');
+            window.location.pathname = '/home';
         }
         else{
             setErrorMessage('Please check login & password');

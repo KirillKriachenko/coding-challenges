@@ -1,25 +1,36 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar';
+import Login from './pages/Login';
+import Home from './pages/Home';
+import Chalanges from './pages/Chalanges';
+import Pagination from './solutions/Pagination';
 
 function App() {
+
+  let location = window.location.pathname;
+  let Content;
+
+  switch (location) {
+    case '/home':
+      Content = Home;
+      break;
+    case '/chalanges':
+      Content = Chalanges;
+      break;
+    case '/chalanges/pagination_component':
+      Content = Pagination;
+      break;
+    default:
+      Content = Login;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {location != '/' && <Navbar />}
+      <Content />
+    </>
   );
 }
 
