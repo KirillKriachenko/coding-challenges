@@ -19,7 +19,7 @@ function Pagination() {
     const [currentPage, setCurrentPage] = useState(1);
 
     let totalCount;
-    let pageCount;
+    let pageCount: number;
     const maxItems = 6;
     let pages: Array<number> = []
 
@@ -45,8 +45,28 @@ function Pagination() {
 
     }, [])
 
-    const displayMemes = () => {
+    const nextPageHandler = () => {
+        if(currentPage < pageCount){
+            setCurrentPage(currentPage + 1);
+        }
+    }
+    const backPageHandler = () => {
+        if(currentPage > 1){
+            setCurrentPage(currentPage - 1);
+        }
+    }
 
+    const displayMemes = () => {
+        let minindex = (currentPage - 1) * maxItems;
+        let maxindex = minindex + maxItems - 1;
+        return <div style={{display:'flex', justifyContent:'space-evenly', flexDirection:'row', flexWrap:'wrap'}}>
+            {
+                memeData.filter((item, index) => index >= minindex && index <= maxindex ).map((item,key) => <div style={{display:'flex',flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
+                    <img src={item.url} style={{width: item.width / 3, height: item.height / 3}}/>
+                    <p>{item.name}</p>
+                </div> )
+            }
+        </div>
     }
 
     const pageNavigation = () => {
@@ -58,11 +78,11 @@ function Pagination() {
             }
 
             return <div style={{display:'flex', justifyContent:'center', alignItems:'center', gap:20}}>
-                <a onClick={() => console.log(currentPage)} className='pageButtons'>Left</a>
+                <a onClick={() => backPageHandler()} className='pageButtons'>Left</a>
                 {
                     pages.map((key) => (<a onClick={() => setCurrentPage(key)} className={currentPage == key ? 'active pageButtons': 'pageButtons'}>{key}</a>))
                 }
-                <a onClick={() => console.log(currentPage)} className='pageButtons'>Right</a>
+                <a onClick={() => nextPageHandler()} className='pageButtons'>Right</a>
             </div>
         }
 
@@ -71,6 +91,7 @@ function Pagination() {
     return (
         <div>
             <h3 style={{ textAlign: 'center' }}>Pagination</h3>
+            {displayMemes()}
             {
                 pageNavigation()
             }
