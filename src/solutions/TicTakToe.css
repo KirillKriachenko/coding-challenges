@@ -45,3 +45,11 @@
     background-color: #537cc4;
     cursor: pointer;
 }
+
+.wincell{
+    background-color: #356953;
+}
+
+.wincell:hover{
+    background-color: #356953;
+}
