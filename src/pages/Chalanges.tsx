@@ -16,6 +16,12 @@ const CHALANGES_LIST = [
         path:'/chalanges/todo_list',
         level: 'Medium',
         description: 'Build a to-do list that allows users to add, edit, and remove tasks. Persist the tasks using local storage.'
+    },{
+        id:3,
+        title: 'TicTakToe',
+        path: '/chalanges/tic_tac_toe',
+        level: 'Medium Advanced',
+        description: 'Create game Tic Tak Toe'
     }
 
 ]

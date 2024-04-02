@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Chalanges from './pages/Chalanges';
 import Pagination from './solutions/Pagination';
 import Todolist from './solutions/Todolist';
+import TicTakToe from './solutions/TicTakToe';
 
 function App() {
 
@@ -25,6 +26,9 @@ function App() {
       break;
     case '/chalanges/todo_list':
       Content = Todolist;
+      break;
+    case '/chalanges/tic_tac_toe':
+      Content = TicTakToe;
       break;
     default:
       Content = Login;
