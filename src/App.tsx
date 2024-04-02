@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Home from './pages/Home';
 import Chalanges from './pages/Chalanges';
 import Pagination from './solutions/Pagination';
+import Todolist from './solutions/Todolist';
 
 function App() {
 
@@ -21,6 +22,9 @@ function App() {
       break;
     case '/chalanges/pagination_component':
       Content = Pagination;
+      break;
+    case '/chalanges/todo_list':
+      Content = Todolist;
       break;
     default:
       Content = Login;

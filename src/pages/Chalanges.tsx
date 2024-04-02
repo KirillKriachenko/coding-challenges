@@ -9,7 +9,15 @@ const CHALANGES_LIST = [
         path: '/chalanges/pagination_component',
         level: 'Medium',
         description: 'Build a pagination component that fetches and displays data from an API, showing a fixed number of items per page.'
+    },
+    {
+        id:2,
+        title: 'Todo Lisst',
+        path:'/chalanges/todo_list',
+        level: 'Medium',
+        description: 'Build a to-do list that allows users to add, edit, and remove tasks. Persist the tasks using local storage.'
     }
+
 ]
 
 function Chalanges() {
